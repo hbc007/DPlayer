@@ -2,7 +2,7 @@
 * Dplayer https://github.com/MoePlayer/DPlayer
 * JavascriptSubtitlesOctopus https://github.com/Dador/JavascriptSubtitlesOctopus
 ## How to Use
-'''
+```
 window.dplayer = new DPlayer({  
     container: document.querySelector("#dplayer"),  
     live: islive,  
@@ -21,4 +21,4 @@ window.dplayer = new DPlayer({
         legacyWorkerUrl: '/js/subtitles-octopus-worker-legacy.js'  
        }  
 });  
-'''
+```
