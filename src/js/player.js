@@ -21,8 +21,6 @@ import ContextMenu from './contextmenu';
 import InfoPanel from './info-panel';
 import tplVideo from '../template/video.art';
 
-import SubtitlesOctopus from '../js/subtitles-octopus.js';
-
 let index = 0;
 const instances = [];
 
@@ -469,6 +467,7 @@ class DPlayer {
                 // Not a video load error, may be poster load failed, see #307
                 return;
             }
+            if (this.subtitle.subInstance) this.subtitle.subInstance.dispose();
             this.tran && this.notice && this.type !== 'webtorrent' && this.notice(this.tran('Video load failed'), -1);
         });
 
@@ -477,6 +476,7 @@ class DPlayer {
             this.bar.set('played', 1, 'width');
             if (!this.setting.loop) {
                 this.pause();
+                if (this.subtitle.subInstance) this.subtitle.subInstance.dispose();
             } else {
                 this.seek(0);
                 this.play();
@@ -595,14 +595,6 @@ class DPlayer {
         if (this.controller.thumbnails) {
             this.controller.thumbnails.resize(160, (this.video.videoHeight / this.video.videoWidth) * 160, this.template.barWrap.offsetWidth);
         }
-        console.log("0subtitle-resized");
-        if (this.subtitle) {
-            if (this.subtitle.ass) {
-                this.subtitle.ass.assresize();
-                console.log("subtitle-resized");
-            }
-        }
-        console.log("0subtitle-resized");
         this.events.trigger('resize');
     }
 
@@ -612,6 +604,7 @@ class DPlayer {
 
     destroy() {
         instances.splice(instances.indexOf(this), 1);
+        if (this.subtitle.subInstance) this.subtitle.subInstance.dispose();
         this.pause();
         this.controller.destroy();
         this.timer.destroy();

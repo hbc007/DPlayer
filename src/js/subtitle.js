@@ -15,7 +15,7 @@ class Subtitle {
             workerUrl: this.options.workerUrl, // Link to WebAssembly-based file "libassjs-worker.js"
             legacyWorkerUrl: this.options.legacyWorkerUrl, // Link to non-WebAssembly worker
         };
-
+        console.log(this.subOptions)
         this.init();
     }
 
