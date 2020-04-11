@@ -1,7 +1,9 @@
 ## Open-Source Code Used
 * Dplayer https://github.com/MoePlayer/DPlayer
 * JavascriptSubtitlesOctopus https://github.com/Dador/JavascriptSubtitlesOctopus
-## How to Use
+## How to Use(Example)
+1. Download all files in this page https://github.com/Dador/JavascriptSubtitlesOctopus/tree/master/dist/js, and put these files into ```wwwroot/js```.
+2. Init Dplayer like this:
 ```
 window.dplayer = new DPlayer({  
     container: document.querySelector("#dplayer"),  
