@@ -10,12 +10,12 @@ class Subtitle {
         this.subInstance = null;
         this.subOptions = {
             video: video, // HTML5 video element
-            subUrl: this.video.src.substring(0, this.video.src.lastIndexOf('.') + 1) + 'ass',
+            subUrl: this.options.url, /*this.video.src.substring(0, this.video.src.lastIndexOf('.') + 1) + 'ass',*/
             fonts: this.options.fonts,
             workerUrl: this.options.workerUrl, // Link to WebAssembly-based file "libassjs-worker.js"
             legacyWorkerUrl: this.options.legacyWorkerUrl, // Link to non-WebAssembly worker
         };
-        console.log(this.subOptions)
+        //console.log(this.subOptions)
         this.init();
     }
 

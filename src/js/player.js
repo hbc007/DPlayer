@@ -467,7 +467,9 @@ class DPlayer {
                 // Not a video load error, may be poster load failed, see #307
                 return;
             }
-            if (this.subtitle.subInstance) this.subtitle.subInstance.dispose();
+            try {
+                this.subtitle.subInstance.dispose();
+            } catch (err) {true}
             this.tran && this.notice && this.type !== 'webtorrent' && this.notice(this.tran('Video load failed'), -1);
         });
 
@@ -476,7 +478,6 @@ class DPlayer {
             this.bar.set('played', 1, 'width');
             if (!this.setting.loop) {
                 this.pause();
-                if (this.subtitle.subInstance) this.subtitle.subInstance.dispose();
             } else {
                 this.seek(0);
                 this.play();
@@ -604,7 +605,9 @@ class DPlayer {
 
     destroy() {
         instances.splice(instances.indexOf(this), 1);
-        if (this.subtitle.subInstance) this.subtitle.subInstance.dispose();
+        try {
+            this.subtitle.subInstance.dispose();
+        } catch (err) {true}
         this.pause();
         this.controller.destroy();
         this.timer.destroy();
