@@ -46,7 +46,7 @@
         "art-template-loader": "1.4.3",
         "autoprefixer": "^9.6.1",
         "babel-loader": "^8.0.6",
-        "cross-env": "^7.0.0",
+        "cross-env": "^7.0.2",
         "css-loader": "^3.2.0",
         "cssnano": "^4.1.10",
         "eslint": "^6.4.0",
@@ -75,6 +75,7 @@
         "yorkie": "^2.0.0"
     },
     "dependencies": {
+        "assjs": "0.0.11",
         "axios": "0.19.2",
         "balloon-css": "^1.0.3",
         "promise-polyfill": "8.1.3"

@@ -36,6 +36,9 @@ export default (options) => {
         !options.subtitle.fontSize && (options.subtitle.fontSize = '20px');
         !options.subtitle.bottom && (options.subtitle.bottom = '40px');
         !options.subtitle.color && (options.subtitle.color = '#fff');
+        !options.subtitle.fonts && (options.subtitle.fonts = ["//gapis.geekzu.org/g-fonts/ea/notosanssc/v1/NotoSansSC-Regular.otf", "//gapis.geekzu.org/g-fonts/ea/notosanstc/v1/NotoSansTC-Regular.otf", "//gapis.geekzu.org/g-fonts/ea/notosansjapanese/v6/NotoSansJP-Regular.otf"]);
+        !options.subtitle.workerUrl && (options.subtitle.workerUrl = '/js/subtitles-octopus-worker.js');
+        !options.subtitle.legacyWorkerUrl && (options.subtitle.legacyWorkerUrl = '/js/subtitles-octopus-worker-legacy.js');
     }
 
     if (options.video.quality) {
