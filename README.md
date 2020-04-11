@@ -20,4 +20,8 @@ window.dplayer = new DPlayer({
         legacyWorkerUrl: '/js/subtitles-octopus-worker-legacy.js'  
     }  
 });  
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 43a04ba0d9e11172c4feed4c29159163003364c2
