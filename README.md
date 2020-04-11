@@ -18,6 +18,6 @@ window.dplayer = new DPlayer({
         fonts:["//gapis.geekzu.org/g-fonts/ea/notosanssc/v1/NotoSansSC-Regular.otf", "//gapis.geekzu.org/g-fonts/ea/notosanstc/v1/NotoSansTC-Regular.otf", "//gapis.geekzu.org/g-fonts/ea/notosansjapanese/v6/NotoSansJP-Regular.otf"],  
         workerUrl: '/js/subtitles-octopus-worker.js',  
         legacyWorkerUrl: '/js/subtitles-octopus-worker-legacy.js'  
-       }  
+    }  
 });  
 ```
